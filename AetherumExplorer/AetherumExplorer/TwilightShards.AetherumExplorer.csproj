@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AAAC04D8-19BD-4F3F-B036-45D2DAE7962B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AetherumExplorer</RootNamespace>
+    <AssemblyName>AetherumExplorer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ILNumerics, Version=3.3.3.0, Culture=neutral, PublicKeyToken=e00823afcff9a03a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ILNumerics.3.3.3.0\lib\ILNumerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AetherumExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AetherumExplorer.Designer.cs">
+      <DependentUpon>AetherumExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Astronomical Objects\AstronomicalObject.cs" />
+    <Compile Include="Data Objects\AetherumGenerationFlags.cs" />
+    <Compile Include="Setting Manipulation\AetherumSettingGetters.cs" />
+    <Compile Include="AetherumSettings.cs" />
+    <Compile Include="CatalogGenerator.cs" />
+    <Compile Include="Data Objects\PlanetaryZone.cs" />
+    <Compile Include="Data Objects\PlanetView.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SectorGenerator.cs" />
+    <Compile Include="Setting Manipulation\PropertyName.cs" />
+    <Compile Include="Data Objects\AstroObjectType.cs" />
+    <Compile Include="Static References\PlanetReference.cs" />
+    <Compile Include="Static References\StellarReference.cs" />
+    <Compile Include="Astronomical Objects\Planet.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Astronomical Objects\Sector.cs" />
+    <Compile Include="Astronomical Objects\StellarSystem.cs" />
+    <Compile Include="Data Objects\SystemView.cs" />
+    <Compile Include="Stellar Logger\StellarHistoryLogger.cs" />
+    <Compile Include="Stellar Logger\StellarHistoryEvent.cs" />
+    <Compile Include="StellarView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StellarView.Designer.cs">
+      <DependentUpon>StellarView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stellar Logger\StellerEventInvoker.cs" />
+    <EmbeddedResource Include="AetherumExplorer.resx">
+      <DependentUpon>AetherumExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StellarView.resx">
+      <DependentUpon>StellarView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TwilightShards.genLibrary\TwilightShards.genLibrary.csproj">
+      <Project>{ac8a917e-45fc-4bef-bbc5-1b2526bcf375}</Project>
+      <Name>TwilightShards.genLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin32\libiomp5md.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin32\mkl_custom.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin64\libiomp5md.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin64\mkl_custom.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\anamoly.jpeg" />
+    <Content Include="Resources\blackhole.jpg" />
+    <Content Include="Resources\Blue-Giant.jpg" />
+    <Content Include="Resources\bluestar.jpeg" />
+    <Content Include="Resources\bluestar.jpg" />
+    <Content Include="Resources\flarestar.jpg" />
+    <Content Include="Resources\intestellarNebula.jpeg" />
+    <Content Include="Resources\neutronStar.jpeg" />
+    <Content Include="Resources\planetaryNebula.jpg" />
+    <Content Include="Resources\protostar.jpg" />
+    <Content Include="Resources\rdwarf.jpg" />
+    <Content Include="Resources\redgiant.jpg" />
+    <Content Include="Resources\redstar.jpg" />
+    <Content Include="Resources\stars-life-black-dwarf.jpg" />
+    <Content Include="Resources\supernovaRemament.jpg" />
+    <Content Include="Resources\typeAstar.jpg" />
+    <Content Include="Resources\typeFstar.jpg" />
+    <Content Include="Resources\typeGstar.jpg" />
+    <Content Include="Resources\typeKstar.jpg" />
+    <Content Include="Resources\typeMstar.jpg" />
+    <Content Include="Resources\typeOstar.jpg" />
+    <Content Include="Resources\whiteDwarf.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilightShards.AetherumExplorer", "AetherumExplorer\TwilightShards.AetherumExplorer.csproj", "{AAAC04D8-19BD-4F3F-B036-45D2DAE7962B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilightShards.genLibrary", "..\TwilightShards.genLibrary\TwilightShards.genLibrary.csproj", "{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://twilightshards.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\TwilightShards.genLibrary\\TwilightShards.genLibrary.csproj
+		SccProjectName1 = ../TwilightShards.genLibrary
+		SccLocalPath1 = ..\\TwilightShards.genLibrary
+		SccProjectUniqueName2 = AetherumExplorer\\TwilightShards.AetherumExplorer.csproj
+		SccProjectName2 = AetherumExplorer
+		SccLocalPath2 = AetherumExplorer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAAC04D8-19BD-4F3F-B036-45D2DAE7962B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAC04D8-19BD-4F3F-B036-45D2DAE7962B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAC04D8-19BD-4F3F-B036-45D2DAE7962B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAC04D8-19BD-4F3F-B036-45D2DAE7962B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
