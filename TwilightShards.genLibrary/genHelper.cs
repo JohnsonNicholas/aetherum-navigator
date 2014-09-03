@@ -10,9 +10,9 @@ namespace TwilightShards.genLibrary
     /// </summary>
     public static class genHelper
     {
-        public static long MILLION  = 1000000;
-        public static long BILLION  = 1000000000;
-        public static long TRILLION = 1000000000000;
+        public const long MILLION  = 1000000;
+        public const long BILLION  = 1000000000;
+        public const long TRILLION = 1000000000000;
 
         /// <summary>
         /// This function formats for an astronomical year.
