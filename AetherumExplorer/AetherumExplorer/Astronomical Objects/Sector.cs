@@ -82,7 +82,7 @@ namespace TwilightShards.AetherumExplorer
             float[,] tempArray = new float[ourSystem.Count,numDimension];
             for (int i = 0; i < ourSystem.Count; i++)
             {
-                float[] p = ourSystem[i].location.convertPointToArray();
+                float[] p = ourSystem[i].location.ConvertPointToFloatArray();
                 if (!(is3D))
                 {
                     tempArray[i, 0] = p[0];

@@ -117,9 +117,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\TwilightShards.genLibrary\TwilightShards.genLibrary.csproj">
       <Project>{ac8a917e-45fc-4bef-bbc5-1b2526bcf375}</Project>
       <Name>TwilightShards.genLibrary</Name>

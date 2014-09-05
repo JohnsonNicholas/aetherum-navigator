@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilightShards.AetherumExpl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilightShards.genLibrary", "..\TwilightShards.genLibrary\TwilightShards.genLibrary.csproj", "{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesterProject", "TesterProject\TesterProject.csproj", "{0C33CE4D-D8C2-40D6-94E3-E1CD84B7EC72}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://twilightshards.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
@@ -19,6 +21,9 @@ Global
 		SccProjectUniqueName2 = AetherumExplorer\\TwilightShards.AetherumExplorer.csproj
 		SccProjectName2 = AetherumExplorer
 		SccLocalPath2 = AetherumExplorer
+		SccProjectUniqueName3 = TesterProject\\TesterProject.csproj
+		SccProjectName3 = TesterProject
+		SccLocalPath3 = TesterProject
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +38,10 @@ Global
 		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C33CE4D-D8C2-40D6-94E3-E1CD84B7EC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C33CE4D-D8C2-40D6-94E3-E1CD84B7EC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C33CE4D-D8C2-40D6-94E3-E1CD84B7EC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C33CE4D-D8C2-40D6-94E3-E1CD84B7EC72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

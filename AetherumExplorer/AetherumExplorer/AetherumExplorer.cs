@@ -89,10 +89,11 @@ namespace TwilightShards.AetherumExplorer
             this.ourSector = new Sector();
             ourGenerator.initateSector(this.ourSector);
             ourGenerator.createStarSystems(this.ourSector);
+            /*
             foreach (StellarSystem ourSys in this.ourSector.ourSystem)
             {
                 ourGenerator.createOrbits(ourSys);
-            }
+            }*/
 
             populateTable();
             
@@ -111,8 +112,8 @@ namespace TwilightShards.AetherumExplorer
                 if (sv.catalog == s.catName)
                 {
                     sv.name = s.name;
-                    sv.sectorCoords = s.location.sumString();
-                    sv.stellarDetails = s.getDescStars();
+                    sv.sectorCoords = s.location.ToString(); //.sumString();
+                    sv.stellarDetails = "[Pending]"; // s.getDescStars();
                     sv.numOfPlanets = s.getNumPlanets();
                     sv.hasHabitablePlanets = s.isHabitable();
                 }
@@ -124,10 +125,11 @@ namespace TwilightShards.AetherumExplorer
             refreshDataInfo(this.ourSector);
 
             //dgvStarListing.
+            /*
             foreach (StellarSystem sys in this.ourSector.ourSystem)
             {
                 ourSystems.Add(new SystemView(sys.catName,sys.name, sys.location.descString(prgSettings.getLightYearResolution()), sys.getShortDesc(), sys.getAge(), sys.getNumPlanets(), sys.getNumStars(), sys.isHabitable()));
-            }
+            }*/
 
             //at the end, bind the data list to the systems
             dgvStarListing.AutoGenerateColumns = false;

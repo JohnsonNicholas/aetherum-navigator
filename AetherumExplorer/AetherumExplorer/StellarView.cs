@@ -50,6 +50,7 @@ namespace TwilightShards.AetherumExplorer
         /// <param name="update">The function we call to update info</param>
         public void popDetails(StellarSystem s, AetherumSettings prSettings, AetherExp.updateInfoDisplay update)
         {
+            /*
             this.updater = update;
             this.system = s;
 
@@ -238,6 +239,7 @@ namespace TwilightShards.AetherumExplorer
             dgvPlanetaryInfo.Columns.Add(locCodeColumn);
 
             dgvPlanetaryInfo.DataSource = planetInfo;
+             */
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -267,6 +269,7 @@ namespace TwilightShards.AetherumExplorer
         /// </summary>
         private void drawSystem()
         {
+            /*
             int centY = (int)Math.Floor(pnlSysDrawing.Height / 2.0);
             int centX = (int)Math.Floor(pnlSysDrawing.Width / 2.0);
             Graphics ourSpace = pnlSysDrawing.CreateGraphics();
@@ -293,6 +296,7 @@ namespace TwilightShards.AetherumExplorer
             {
                 ourSpace.DrawEllipse(brush, centX, centY, 30, 30);
             }
+             */
         }
     }
 }

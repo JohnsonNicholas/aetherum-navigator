@@ -91,7 +91,7 @@ namespace TwilightShards.AetherumExplorer
                 do
                 {
                     newPoint.SetCoords(new int[] {velvetBag.rng(1, gridLimit), velvetBag.rng(1, gridLimit), velvetBag.rng(1, gridLimit) });
-                } while (((from c in ourPoints where c.getDistance(newPoint) <= minStellarDistance select c).Any()));
+                } while (((from c in ourPoints where c.GetDistance(newPoint) <= minStellarDistance select c).Any()));
 
                 ourPoints.Add(new PlotPoint(newPoint));
             }

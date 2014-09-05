@@ -62,49 +62,37 @@ namespace TwilightShards.genLibrary
         /// <param name="c">PlotPoint being copied</param>
         public PlotPoint(PlotPoint c)
         {
-            this.ptX = c.getCoordX();
-            this.ptY = c.getCoordY();
-            this.ptZ = c.getCoordZ();
+            this.ptX = c.GetCoordX();
+            this.ptY = c.GetCoordY();
+            this.ptZ = c.GetCoordZ();
         }
 
-        //get methods - defined here in case I need to do any verification later.
-        public int getCoordX()
+        /// <summary>
+        /// This function returns the X coordinate of the point.
+        /// </summary>
+        /// <returns>The x coordinate</returns>
+        public int GetCoordX()
         {
             return this.ptX;
         }
 
-        public int getCoordY()
+        /// <summary>
+        /// This function returns the Y coordinate of the point
+        /// </summary>
+        /// <returns>The y coordinate</returns>
+        public int GetCoordY()
         {
             return this.ptY;
         }
 
-        public int getCoordZ()
+        /// <summary>
+        /// This function returns the Z coordinate of the point
+        /// </summary>
+        /// <returns>The z coordinate</returns>
+        public int GetCoordZ()
         {
             return this.ptZ;
         }
-
-        /// <summary>
-        /// This adds the two points together using standard point addition
-        /// </summary>
-        /// <param name="p1">The first point</param>
-        /// <param name="p2">The second point</param>
-        /// <returns>The combined point</returns>
-        public static PlotPoint operator +(PlotPoint p1, PlotPoint p2)
-        {
-            return new PlotPoint(p1.getCoordX() + p2.getCoordX(), p1.getCoordY() + p2.getCoordY(), p1.getCoordZ() + p2.getCoordZ());
-        }
-
-        /// <summary>
-        /// This subtracts the two points together using standard point subtraction
-        /// </summary>
-        /// <param name="p1"></param>
-        /// <param name="p2"></param>
-        /// <returns></returns>
-        public static PlotPoint operator -(PlotPoint p1, PlotPoint p2)
-        {
-            return new PlotPoint(p1.getCoordX() - p2.getCoordX(), p1.getCoordY() - p2.getCoordY(), p1.getCoordZ()- p2.getCoordZ());
-        } 
-
         //the two equal overrides.
 
         /// <summary>
@@ -120,9 +108,12 @@ namespace TwilightShards.genLibrary
             PlotPoint p = obj as PlotPoint;
             if ((Object)p == null) return false; // if the cast fails, return false
 
-            return (ptX == p.getCoordX()) && (ptY == p.getCoordY()) && (ptZ == p.getCoordZ());
+            return (ptX == p.GetCoordX()) && 
+                   (ptY == p.GetCoordY()) && 
+                   (ptZ == p.GetCoordZ());
         }
 
+        /*
         /// <summary>
         /// Override if you are explicitly passing it a plotpoint.
         /// </summary>
@@ -133,8 +124,12 @@ namespace TwilightShards.genLibrary
             if ((object)p == null) return false;
 
             return (ptX == p.getCoordX()) && (ptY == p.getCoordY()) && (ptZ == p.getCoordZ());
-        }
+        } */
 
+        /// <summary>
+        /// This function returns the hash value of this object
+        /// </summary>
+        /// <returns>The hash value of the object</returns>
         public override int GetHashCode()
         {
             return ptX ^ ptY ^ ptZ;
@@ -144,9 +139,18 @@ namespace TwilightShards.genLibrary
         /// Converts the point to a float[] array. Useful for mapping.
         /// </summary>
         /// <returns>A float[] of the points</returns>
-        public float[] convertPointToArray()
+        public float[] ConvertPointToFloatArray()
         {
             return new float[] { this.ptX, this.ptY, this.ptZ };
+        }
+
+        /// <summary>
+        /// Converts the point to a double[] array. Useful for mapping.
+        /// </summary>
+        /// <returns>A double[] of the points</returns>
+        public double[] ConvertPointToDoubleArray()
+        {
+            return new double[] { this.ptX, this.ptY, this.ptZ };
         }
 
         /// <summary>
@@ -154,13 +158,13 @@ namespace TwilightShards.genLibrary
         /// </summary>
         /// <param name="B">The plot point being compared from</param>
         /// <returns>The distance</returns>
-        public double getDistance(PlotPoint B)
+        public double GetDistance(PlotPoint B)
         {
             double distX, distY, distZ;
 
-            distX = Math.Pow(B.getCoordX() - this.ptX, 2);
-            distY = Math.Pow(B.getCoordY() - this.ptY, 2);
-            distZ = Math.Pow(B.getCoordZ() - this.ptZ, 2);
+            distX = Math.Pow(B.GetCoordX() - this.ptX, 2);
+            distY = Math.Pow(B.GetCoordY() - this.ptY, 2);
+            distZ = Math.Pow(B.GetCoordZ() - this.ptZ, 2);
 
             return Math.Sqrt(distX + distY + distZ);
         }
