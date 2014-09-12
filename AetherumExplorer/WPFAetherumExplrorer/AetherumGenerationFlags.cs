@@ -5,6 +5,7 @@ namespace TwilightShards.AetherumExplorerW
     /// <summary>
     /// This enum tracks flags for creation. Used in a setting.
     /// </summary>
+    [Flags]
     public enum AetherumGenerationFlags
     {
         /// <summary>
