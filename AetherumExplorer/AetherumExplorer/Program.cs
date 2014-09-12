@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using TwilightShards.AetherumExplorerW;
+
 namespace TwilightShards.AetherumExplorer
 {
     static class Program
@@ -16,7 +18,8 @@ namespace TwilightShards.AetherumExplorer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AetherumExplorer());
+            //Application.Run(new AetherumExplorer());
+            //Application.Run(new TwilightShards.AetherumExplorerW.MainWindow());
         }
     }
 }

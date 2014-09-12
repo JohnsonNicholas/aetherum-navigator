@@ -1,9 +1,9 @@
-﻿namespace TwilightShards.genLibrary
-{
-    using System;
-    using System.Text;
-    using NPack;
-    
+﻿using System;
+using System.Text;
+using NPack;
+
+namespace TwilightShards.genLibrary
+{    
     /// <summary>
     /// A object to abstract access to the Mersenne Twister as well as provide predefined functions
     /// </summary>
@@ -98,6 +98,16 @@
         {
             return (int)(size * dice.NextDoublePositive() + 1);
         }
+
+        /// <summary>
+        /// The base die - rolls from 1 to the size parameter
+        /// </summary>
+        /// <param name="size">The size (of the metaphorical die)</param>
+        /// <returns>A number in that range</returns>
+        public long rng(long size)
+        {
+            return (long)(size * dice.NextDoublePositive() + 1);
+        }
         
         /// <summary>
         /// A number of die from 1 to num, from 1 to the size
@@ -108,6 +118,23 @@
         public int rng(int num, int size)
         {
             int total = 0;
+            for (int i = 0; i < num; i++)
+            {
+                total = total + this.rng(size);
+            }
+
+            return total;
+        }
+
+        /// <summary>
+        /// A number of die from 1 to num, from 1 to the size
+        /// </summary>
+        /// <param name="num">Number of die</param>
+        /// <param name="size">The size of the die</param>
+        /// <returns>A number in the range given by numDsize</returns>
+        public long rng(int num, long size)
+        {
+            long total = 0;
             for (int i = 0; i < num; i++)
             {
                 total = total + this.rng(size);
@@ -154,6 +181,21 @@
 
             double range = endVal - startVal;
             return (int)Math.Floor((dice.NextDoublePositive() * range + startVal));
+        }
+
+        /// <summary>
+        /// A number within [startVal, endVal]. If both are the same, it'll return startVal without rolling.
+        /// </summary>
+        /// <param name="startVal">The begining Value</param>
+        /// <param name="endVal">The ending Value</param>
+        /// <returns>The number</returns>
+        public long rollInLongRange(double startVal, double endVal)
+        {
+            if (endVal == startVal)
+                return (long)Math.Floor(startVal);
+
+            double range = endVal - startVal;
+            return (long)Math.Floor((dice.NextDoublePositive() * range + startVal));
         }
 
         /// <summary>
@@ -212,6 +254,4 @@
             else return false;
         }
     }
-
-
 }

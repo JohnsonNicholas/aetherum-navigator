@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AetherumExplorer));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,12 +36,9 @@
             this.pnlInfoDisp = new System.Windows.Forms.Panel();
             this.lblNumStars = new System.Windows.Forms.Label();
             this.lblSectorName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ilStarChart = new ILNumerics.Drawing.ILPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStarListing)).BeginInit();
             this.pnlInfoDisp.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,7 +63,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -115,33 +111,11 @@
             this.lblSectorName.TabIndex = 0;
             this.lblSectorName.Text = "Sector Name:";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.ilStarChart);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 715);
-            this.panel1.TabIndex = 4;
-            // 
-            // ilStarChart
-            // 
-            this.ilStarChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ilStarChart.Driver = ILNumerics.Drawing.RendererTypes.OpenGL;
-            this.ilStarChart.Editor = null;
-            this.ilStarChart.Location = new System.Drawing.Point(0, 0);
-            this.ilStarChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ilStarChart.Name = "ilStarChart";
-            this.ilStarChart.Rectangle = ((System.Drawing.RectangleF)(resources.GetObject("ilStarChart.Rectangle")));
-            this.ilStarChart.ShowUIControls = false;
-            this.ilStarChart.Size = new System.Drawing.Size(834, 715);
-            this.ilStarChart.TabIndex = 0;
-            // 
             // AetherumExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 740);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlInfoDisp);
             this.Controls.Add(this.dgvStarListing);
             this.Controls.Add(this.menuStrip1);
@@ -154,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStarListing)).EndInit();
             this.pnlInfoDisp.ResumeLayout(false);
             this.pnlInfoDisp.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,8 +143,6 @@
         private System.Windows.Forms.Panel pnlInfoDisp;
         private System.Windows.Forms.Label lblNumStars;
         private System.Windows.Forms.Label lblSectorName;
-        private System.Windows.Forms.Panel panel1;
-        private ILNumerics.Drawing.ILPanel ilStarChart;
     }
 }
 

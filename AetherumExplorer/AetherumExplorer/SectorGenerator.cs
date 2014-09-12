@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using TwilightShards.genLibrary;
-using ILNumerics.Drawing;
 
 namespace TwilightShards.AetherumExplorer
 {

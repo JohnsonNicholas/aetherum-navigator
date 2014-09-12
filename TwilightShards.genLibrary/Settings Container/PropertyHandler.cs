@@ -1,19 +1,24 @@
-﻿//Code thanks to Jon Bangsberg
+﻿//CONTRIBUTED CODE. See CONTRIBUTORS for details.
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TwilightShards.genLibrary
 {
     /// <summary>
     /// This class is meant to be a generic container for properties. 
     /// </summary>
-    /// <remarks>When implementing it or calling it, remember you need to write your own Enum containing the property names.</remarks>
-    public class PropertyHandler
+    /// <remarks>Abstract because you will need to have your own Enum for Property names.</remarks>
+    abstract public class PropertyHandler
     {
+        /// <summary>
+        /// Internal dictionary tracking properties and values
+        /// </summary>
+        /// <remarks>The type is specified as an Enum, which contains the name of all of the settings</remarks>
         protected Dictionary<System.Enum, object> Properties = new Dictionary<System.Enum, object>();
+
+        /// <summary>
+        /// The path to the file where settings are stored.
+        /// </summary>
         protected string FilePath;
 
         /// <summary>
@@ -54,14 +59,15 @@ namespace TwilightShards.genLibrary
         /// <returns>The value</returns>
         public T Get<T>(System.Enum PropertyName)
         {
-            if (!Properties.ContainsKey(PropertyName))
-                throw new ArgumentException("Invalid property");
-            if (Properties[PropertyName].GetType() != typeof(T))
-            {
-                throw new ArgumentException("Invalid type. Type requested is " + typeof(T) + " , type gotten is " + Properties[PropertyName].GetType());
-            }
-      
+            if (Properties.Count == 0)
+                throw new InvalidOperationException("The settings container has not been initiated!");
 
+            if (!Properties.ContainsKey(PropertyName))
+                throw new ArgumentException("Invalid property: " + PropertyName);                
+            
+            if (Properties[PropertyName].GetType() != typeof(T))
+                throw new ArgumentException("Invalid type. Type requested is " + typeof(T) + " , type gotten is " + Properties[PropertyName].GetType());
+      
             return (T)Properties[PropertyName];
         }
 
@@ -78,4 +84,4 @@ namespace TwilightShards.genLibrary
 
     }
 
-}//namespace close
+}

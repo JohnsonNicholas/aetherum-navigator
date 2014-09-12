@@ -9,10 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using ILNumerics;
-using ILNumerics.Drawing.Plotting;
-using ILNumerics.Drawing;
-
 using TwilightShards.genLibrary;
 
 namespace TwilightShards.AetherumExplorer
@@ -96,8 +92,7 @@ namespace TwilightShards.AetherumExplorer
             }*/
 
             populateTable();
-            
-            DrawMap(this.prgSettings.gridTypeIs3D(), ourSector.getStarPlot(prgSettings.gridTypeIs3D())); 
+           
         
         }
 
@@ -187,66 +182,6 @@ namespace TwilightShards.AetherumExplorer
             dgvStarListing.DataSource = ourSystems;
         }
 
-        /// <summary>
-        /// This function draws the map. It draws if it's 2D or 3D 
-        /// </summary>
-        public void DrawMap(bool is3D, float[,] ourPoints)
-        {
-            ILArray<float> ourPositions = ourPoints;
-
-            ILScene scene = new ILScene();
-            //Create our scene!
-            if (is3D)
-            {
-                scene.Add(new ILPlotCube(twoDMode: false) {
-                        new ILPoints {
-                            Positions = ourPositions,
-                            Size = 5,
-                            Color = Color.White
-                        }});
-            }
-            else
-            {
-                scene.Add(new ILPlotCube(twoDMode: false) {
-                    new ILPlotCube(twoDMode: true) {
-                        new ILPoints {
-                            Positions = ourPositions,
-                            Size = 5,
-                            Color = Color.White
-                        }
-                    }
-                });
-            }
-
-            //configure the plot cube appearence
-            scene.First<ILPlotCube>().FieldOfView = 120;
-            scene.First<ILPlotCube>().LookAt = new Vector3(0, 0, 0);
-            scene.First<ILPlotCube>().ScaleModes.XAxisScale = AxisScale.Linear;
-            scene.First<ILPlotCube>().ScaleModes.YAxisScale = AxisScale.Linear;
-            scene.First<ILPlotCube>().ScaleModes.ZAxisScale = AxisScale.Linear;
-
-            //set label colors. This is all over the place.
-            var xLabel = scene.First<ILPlotCube>().Axes.XAxis.Ticks.DefaultLabel;
-            xLabel.Color = Color.White;
-
-            var yLabel = scene.First<ILPlotCube>().Axes.YAxis.Ticks.DefaultLabel;
-            yLabel.Color = Color.White;
-
-            var zLabel = scene.First<ILPlotCube>().Axes.ZAxis.Ticks.DefaultLabel;
-            zLabel.Color = Color.White;
-
-            scene.First<ILPlotCube>().Axes.XAxis.Label.Color = Color.White;
-            scene.First<ILPlotCube>().Axes.YAxis.Label.Color = Color.White;
-            scene.First<ILPlotCube>().Axes.ZAxis.Label.Color = Color.White;
-
-            //designed to create a starfield look.
-            ilStarChart.Scene = scene;
-
-            ilStarChart.BackColor = Color.Black;
-            ilStarChart.ForeColor = Color.White;
-            ilStarChart.Scene.Configure();
-
-        }
 
         /// <summary>
         /// Helper function to format the age.

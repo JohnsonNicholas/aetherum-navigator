@@ -34,9 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,32 +56,24 @@
     </Compile>
     <Compile Include="Debug Writer\DebugWriter.cs" />
     <Compile Include="Debug Writer\DebugWriterFlags.cs" />
-    <Compile Include="DiceHelper.cs" />
-    <Compile Include="Dice\DiceTreeNode.cs" />
-    <Compile Include="Dice\DiceTreeLeaf.cs" />
+    <Compile Include="Dice\DiceHelper.cs" />
+    <Compile Include="DiceTree\DiceTreeNode.cs" />
+    <Compile Include="DiceTree\DiceTreeLeaf.cs" />
     <Compile Include="Dice\Dice.cs" />
-    <Compile Include="Dice\DiceTreeBase.cs" />
-    <Compile Include="Enum Modifications\ValType.cs" />
-    <Compile Include="FFRichTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="genHelper.cs" />
+    <Compile Include="DiceTree\DiceTreeBase.cs" />
+    <Compile Include="PermissionChecker.cs" />
+    <Compile Include="Settings Container\ValType.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="Dice\MersenneTwister.cs" />
-    <Compile Include="Enum Modifications\PropDefs.cs" />
+    <Compile Include="Settings Container\PropDefs.cs" />
     <Compile Include="ObjectConverter.cs" />
-    <Compile Include="PlotPoint.cs" />
+    <Compile Include="Extension Methods\Point3DExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="RangePair.cs" />
-    <Compile Include="rawInputParse.cs" />
-    <Compile Include="RichTextBoxExtensions.cs" />
-    <Compile Include="Settings Container\IValidator.cs" />
+    <Compile Include="RawInputParse.cs" />
+    <Compile Include="Extension Methods\RichTextBoxExtensions.cs" />
     <Compile Include="Settings Container\PropertyHandler.cs" />
-    <Compile Include="Settings Container\ValidationHandler.cs" />
-    <Compile Include="Enum Modifications\StringEnum.cs" />
-    <Compile Include="Enum Modifications\StringValueAttribute.cs" />
-    <Compile Include="Settings Container\Validators.cs" />
-    <Compile Include="ValueWithError.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Debug Writer\DebugConsole.resx">

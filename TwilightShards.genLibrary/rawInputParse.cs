@@ -1,13 +1,13 @@
-﻿namespace TwilightShards.genLibrary
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+namespace TwilightShards.genLibrary
+{
     /// <summary>
     /// This class contains functions designed to read raw input and return a valid output for options 
     /// or other things that needed limited values.
     /// </summary>
-    public static class rawInputParse
+    public static class RawInputParse
     {        
         /// <summary>
         /// This functon verifies the input (i.e makes sure it's a string) from a source then checks against allowed values 
@@ -17,7 +17,7 @@
         /// <param name="defaultValue">The default value for this input</param>
         /// <param name="possibleValues">The possible values for this input</param>
         /// <returns>true if it was valid, false if it was reset to default</returns>
-        public static bool verifyInputWithValues(string rawInput, out string procValue, string defaultValue, List<string> possibleValues)
+        public static bool VerifyInputWithValues(string rawInput, out string procValue, string defaultValue, List<string> possibleValues)
         {
             //check against the values
             foreach (string s in possibleValues)
@@ -42,7 +42,7 @@
         /// <param name="defaultValue">The default value for this input</param>
         /// <param name="possibleValues">The possible values for this input</param>
         /// <returns>true if it was valid, false if it was reset to default</returns>
-        public static bool verifyInputWithValues(string rawInput, out uint procValue, uint defaultValue, List<uint> possibleValues)
+        public static bool VerifyInputWithValues(string rawInput, out uint procValue, uint defaultValue, List<uint> possibleValues)
         {
             uint testVal;
             if (UInt32.TryParse(rawInput, out testVal))
@@ -69,7 +69,7 @@
         /// <param name="procValue">The value passed back to the function.</param>
         /// <param name="defaultValue">The default value for this input</param>
         /// <returns>true if it was valid, false if it was reset to default</returns>
-        public static bool verifyInputWithValues(string rawInput, out bool procValue, bool defaultValue)
+        public static bool VerifyInputWithValues(string rawInput, out bool procValue, bool defaultValue)
         {
             bool testVal;
             if (Boolean.TryParse(rawInput, out testVal))
@@ -91,7 +91,7 @@
         /// <param name="defaultValue">The default value for this input</param>
         /// <param name="possibleValues">The possible values for this input</param>
         /// <returns>true if it was valid, false if it was reset to default</returns>
-        public static bool verifyInputWithValues(string rawInput, out int procValue, int defaultValue, List<int> possibleValues)
+        public static bool VerifyInputWithValues(string rawInput, out int procValue, int defaultValue, List<int> possibleValues)
         {
             int testVal;
             if (Int32.TryParse(rawInput, out testVal))
@@ -119,7 +119,7 @@
         /// <param name="defaultValue">The default value for this input</param>
         /// <param name="possibleValues">The possible values for this input</param>
         /// <returns>true if it was valid, false if it was reset to default</returns>
-        public static bool verifyInputWithValues(string rawInput, out ulong procValue, ulong defaultValue, List<ulong> possibleValues)
+        public static bool VerifyInputWithValues(string rawInput, out ulong procValue, ulong defaultValue, List<ulong> possibleValues)
         {
             ulong testVal;
             if (UInt64.TryParse(rawInput, out testVal))
@@ -147,7 +147,7 @@
         /// <param name="defaultValue">The default value for this input</param>
         /// <param name="possibleValues">The possible values for this input</param>
         /// <returns>true if it was valid, false if it was reset to default</returns>
-        public static bool verifyInputWithValues(string rawInput, out long procValue, long defaultValue, List<long> possibleValues)
+        public static bool VerifyInputWithValues(string rawInput, out long procValue, long defaultValue, List<long> possibleValues)
         {
             long testVal;
             if (Int64.TryParse(rawInput, out testVal))
@@ -176,7 +176,7 @@
         /// <param name="minValue">The minimum valid value</param>
         /// <param name="maxValue">The maxmimum valid value</param>
         /// <returns>True if valid, False if invalid.</returns>
-        public static bool verifyInputWithBounds(string rawInput, out ulong procValue, ulong defaultValue, ulong minValue, ulong maxValue)
+        public static bool VerifyInputWithBounds(string rawInput, out ulong procValue, ulong defaultValue, ulong minValue, ulong maxValue)
         {
             //sanity checking.
             if (defaultValue < UInt64.MinValue || defaultValue > UInt64.MaxValue)
@@ -223,7 +223,7 @@
         /// <param name="minValue">The minimum valid value</param>
         /// <param name="maxValue">The maxmimum valid value</param>
         /// <returns>True if valid, False if invalid.</returns>
-        public static bool verifyInputWithBounds(string rawInput, out long procValue, long defaultValue, long minValue, long maxValue)
+        public static bool VerifyInputWithBounds(string rawInput, out long procValue, long defaultValue, long minValue, long maxValue)
         {
             //sanity checking.
             if (defaultValue < Int64.MinValue || defaultValue > Int64.MaxValue)
@@ -271,7 +271,7 @@
         /// <param name="minValue">The minimum valid value</param>
         /// <param name="maxValue">The maxmimum valid value</param>
         /// <returns>True if valid, False if invalid.</returns>
-        public static bool verifyInputWithBounds(string rawInput, out uint procValue, uint defaultValue, uint minValue, uint maxValue)
+        public static bool VerifyInputWithBounds(string rawInput, out uint procValue, uint defaultValue, uint minValue, uint maxValue)
         {
             //sanity checking.
             if (defaultValue < UInt32.MinValue || defaultValue > UInt32.MaxValue)
@@ -318,7 +318,7 @@
         /// <param name="minValue">The minimum valid value</param>
         /// <param name="maxValue">The maxmimum valid value</param>
         /// <returns>True if valid, False if invalid.</returns>
-        public static bool verifyInputWithBounds(string rawInput, out int procValue, int defaultValue, int minValue, int maxValue)
+        public static bool VerifyInputWithBounds(string rawInput, out int procValue, int defaultValue, int minValue, int maxValue)
         {
              //sanity checking.
             if (defaultValue < Int32.MinValue || defaultValue > Int32.MaxValue)

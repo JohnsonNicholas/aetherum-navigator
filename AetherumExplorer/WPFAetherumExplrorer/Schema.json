@@ -1,0 +1,16 @@
+{
+  "$schema": http://json-schema.org/draft-04/schema#".
+  "title": "AetherumSettings",
+  "description":  "This describes the schema for the settings",
+  "type": "object",
+  "properties": {
+        "DefaultSectorPrefix": {
+                "description": "The default prefix of a sector name.",
+                "type": "string"
+        }
+        "MaxSizeOfSectorCatalog"{
+                "description": "The maximum number of sectors in a galaxy",
+                "type": "integer"
+        }
+   }
+}

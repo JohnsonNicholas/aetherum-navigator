@@ -10,12 +10,12 @@ namespace TwilightShards.genLibrary
         /// <summary>
         /// Lower bound
         /// </summary>
-        public double lowBound;
+        public double LowerBound;
 
         /// <summary>
         /// Higher bound
         /// </summary>
-        public double highBound;
+        public double HigherBound;
 
         /// <summary>
         /// Constructor
@@ -24,8 +24,8 @@ namespace TwilightShards.genLibrary
         /// <param name="h">Higher bound</param>
         public RangePair(double l, double h)
         {
-            this.lowBound = l;
-            this.highBound = h;
+            this.LowerBound = l;
+            this.HigherBound = h;
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace TwilightShards.genLibrary
         /// <param name="r">The value for this pair</param>
         public RangePair(double r)
         {
-            this.lowBound = this.highBound = r;
+            this.LowerBound = this.HigherBound = r;
         }
     }
 }
