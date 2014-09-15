@@ -34,6 +34,7 @@ namespace TwilightShards.AetherumExplorerW
             this.ourSystem = s;
             InitializeComponent();
             this.DataContext = this.ourSystem;
+            lvHistory.ItemsSource = this.ourSystem.SystemHistory.LoggedEvents; 
         }
 
         /// <summary>
@@ -41,7 +42,7 @@ namespace TwilightShards.AetherumExplorerW
         /// </summary>
         /// <param name="sender">Object that sent this event</param>
         /// <param name="e">Event arguments</param>
-        private void CloseForm(object sender, RoutedEventArgs e)
+        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }

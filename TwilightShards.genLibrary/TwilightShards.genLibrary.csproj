@@ -41,6 +41,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,14 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Debug Writer\DebugConsole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Debug Writer\DebugConsole.Designer.cs">
-      <DependentUpon>DebugConsole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Debug Writer\DebugWriter.cs" />
-    <Compile Include="Debug Writer\DebugWriterFlags.cs" />
     <Compile Include="Dice\DiceHelper.cs" />
     <Compile Include="DiceTree\DiceTreeNode.cs" />
     <Compile Include="DiceTree\DiceTreeLeaf.cs" />
@@ -63,6 +56,8 @@
     <Compile Include="DiceTree\DiceTreeBase.cs" />
     <Compile Include="PermissionChecker.cs" />
     <Compile Include="Settings Container\ValType.cs" />
+    <Compile Include="TwilightLogger\TwilightLogger.cs" />
+    <Compile Include="TwilightLogger\TwilightOutputs.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Dice\MersenneTwister.cs" />
     <Compile Include="Settings Container\PropDefs.cs" />
@@ -76,9 +71,6 @@
     <Compile Include="Settings Container\PropertyHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Debug Writer\DebugConsole.resx">
-      <DependentUpon>DebugConsole.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>

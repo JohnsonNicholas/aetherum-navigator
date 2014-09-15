@@ -18,7 +18,8 @@ namespace TwilightShards.AetherumExplorerW
         /// Tracks system creation state
         /// </summary>
         private bool SystemsCreated = false;
-
+        
+        /*
         /// <summary>
         /// Tracks if the systems have been initiated
         /// </summary>  
@@ -32,7 +33,7 @@ namespace TwilightShards.AetherumExplorerW
         /// <summary>
         /// Tracks if planets have been initiated
         /// </summary>
-        private bool PlanetsInitiated = false;
+        private bool PlanetsInitiated = false; */
 
         //************************************* OBJECTS
         /// <summary>
@@ -78,9 +79,9 @@ namespace TwilightShards.AetherumExplorerW
             
             //finally, reset all indicators
             this.SystemsCreated = false;
-            this.SystemsInitiated = false;
+            /* this.SystemsInitiated = false;
             this.OrbitsCreated = false;
-            this.PlanetsInitiated = false;
+            this.PlanetsInitiated = false; */
         }
         
         /// <summary>

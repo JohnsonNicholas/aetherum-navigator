@@ -84,15 +84,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AetherumGenerationFlags.cs" />
-    <Compile Include="AetherumSettingGetters.cs" />
-    <Compile Include="AetherumSettings.cs" />
+    <Compile Include="Stellar Objects\Sector.cs" />
+    <Compile Include="Setting Manipulation\AetherumGenerationFlags.cs" />
+    <Compile Include="Setting Manipulation\AetherumSettingGetters.cs" />
+    <Compile Include="Setting Manipulation\AetherumSettings.cs" />
     <Compile Include="CatalogGenerator.cs" />
-    <Compile Include="PropertyName.cs" />
+    <Compile Include="Setting Manipulation\PropertyName.cs" />
     <Compile Include="ScatterPlot3D.cs" />
-    <Compile Include="Sector.cs" />
+    <Compile Include="Stellar Logger\StellarEventType.cs" />
     <Compile Include="SectorGenerator.cs" />
-    <Compile Include="StellarSystem.cs" />
+    <Compile Include="Stellar Objects\StellarSystem.cs" />
+    <Compile Include="Stellar Logger\StellarEventLogger.cs" />
+    <Compile Include="Stellar Logger\StellarEvent.cs" />
     <Compile Include="SystemDisplay.xaml.cs">
       <DependentUpon>SystemDisplay.xaml</DependentUpon>
     </Compile>

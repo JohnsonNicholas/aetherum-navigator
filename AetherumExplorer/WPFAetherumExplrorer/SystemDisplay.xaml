@@ -4,30 +4,70 @@
         xmlns:local="clr-namespace:TwilightShards.AetherumExplorerW"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
         Title="System Display" Height="800" Width="1200" ResizeMode="CanMinimize">
-    <Canvas>
-        <Label Canvas.Left="10" Canvas.Top="10">
-            <TextBlock FontWeight="Bold" Text="Catalog Name:" />
-        </Label>
-        <Label Canvas.Left="100" Canvas.Top="10">
-            <TextBlock Text="{Binding CatalogName}" />
-        </Label>
-        <Label Margin="0,0,0,0" Canvas.Left="170" Canvas.Top="10">
-            <TextBlock FontWeight="Bold" Text="System Name:" />
-        </Label>
-        <Label Margin="0,0,0,0" Canvas.Left="260" Canvas.Top="10">
-            <TextBox Width="120" Text="{Binding SystemName}" />
-        </Label>
-        <Label Margin="0,0,0,0" Canvas.Left="450" Canvas.Top="10">
-            <TextBlock FontWeight="Bold" Text="System Age:" />
-        </Label>
-        <xctk:DoubleUpDown Value="{Binding SystemAge}" FormatString="N0" Increment="1000" Maximum="13900000000"  Margin="0,0,0,0" Canvas.Left="545" Width="90" Canvas.Top="10" />
-        <Label Margin="0,0,0,0" Canvas.Left="640" Canvas.Top="10">
-            <TextBlock FontWeight="Bold" Text="Years" />
-        </Label>
-        <Button Click="CloseForm" Height="25" Margin="0,0,0,0" Canvas.Left="1072" Canvas.Top="10" Width="55">Close</Button>
+    <TabControl>
+        <TabItem Header="System Details">
+            <Canvas>
+                <Label Canvas.Left="10" Canvas.Top="10">
+                    <TextBlock FontWeight="Bold" Text="Catalog Name:" />
+                </Label>
+                <Label Canvas.Left="100" Canvas.Top="10">
+                    <TextBlock Text="{Binding CatalogName}" />
+                </Label>
+                <Label Margin="0,0,0,0" Canvas.Left="170" Canvas.Top="10">
+                    <TextBlock FontWeight="Bold" Text="System Name:" />
+                </Label>
+                <Label Margin="0,0,0,0" Canvas.Left="260" Canvas.Top="10">
+                    <TextBox Width="120" Text="{Binding SystemName}" />
+                </Label>
+                <Label Margin="0,0,0,0" Canvas.Left="450" Canvas.Top="10">
+                    <TextBlock FontWeight="Bold" Text="System Age:" />
+                </Label>
+                <xctk:DoubleUpDown Value="{Binding SystemAge}" FormatString="N0" Increment="1000" Maximum="13900000000"  Margin="0,0,0,0" Canvas.Left="545" Width="90" Canvas.Top="10" />
+                <Label Margin="0,0,0,0" Canvas.Left="640" Canvas.Top="10">
+                    <TextBlock FontWeight="Bold" Text="Years" />
+                </Label>
+            </Canvas>
+        </TabItem>
+        <TabItem Header="Stellar Details">
 
+        </TabItem>
+        <TabItem Header="Planet Details">
 
-    </Canvas>
-    <!-- Button Margin="1094,9,10,732" MouseDoubleClick="Button_MouseDoubleClick" Height="25">Close</> -->
+        </TabItem>
+        <TabItem Header="History of the System" HorizontalAlignment="Left" Width="129">
+            <ListView Name="lvHistory">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Event Year" Width="80">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FormattedEventYear}" />
+                                </DataTemplate>    
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                      <GridViewColumn Header="Event Type" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding EventType}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Event Text">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding EventDesc}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </TabItem>
+    </TabControl>
 
 </Window>

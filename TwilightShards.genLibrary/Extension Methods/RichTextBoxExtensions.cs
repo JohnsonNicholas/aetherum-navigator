@@ -16,7 +16,7 @@ namespace TwilightShards.genLibrary
         /// <param name="box">The RichTextBox </param>
         /// <param name="text">Text being added</param>
         /// <param name="color">The color of the text</param>
-        public static void AppendText(this RichTextBox box, string text, Color color)
+        public static void AppendText(this System.Windows.Forms.RichTextBox box, string text, System.Drawing.Color color)
         {
             /* box.SelectionStart = box.TextLength;
             box.SelectionLength = 0; */ //testing!
@@ -31,7 +31,7 @@ namespace TwilightShards.genLibrary
         /// </summary>
         /// <param name="box">The RichTextBox</param>
         /// <param name="text">Text being added</param>
-        public static void AppendBoldText(this RichTextBox box, string text)
+        public static void AppendBoldText(this System.Windows.Forms.RichTextBox box, string text)
         {
             box.SelectionFont = new Font(box.Font, FontStyle.Bold);
             box.AppendText(text);
@@ -44,7 +44,7 @@ namespace TwilightShards.genLibrary
         /// <param name="box">The RichTextBox</param>
         /// <param name="text">Text being added</param>
         /// <param name="color">Color of the text being added.</param>
-        public static void AppendColorBoldText(this RichTextBox box, string text, Color color)
+        public static void AppendColorBoldText(this System.Windows.Forms.RichTextBox box, string text, System.Drawing.Color color)
         {
             box.SelectionFont = new Font(box.Font, FontStyle.Bold);
             box.SelectionColor = color;
